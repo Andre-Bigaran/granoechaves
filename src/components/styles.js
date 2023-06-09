@@ -37,6 +37,34 @@ const styles = {
     border: "none",
     cursor: "pointer",
   },
+  inputContact: {
+    width: "30vw",
+    height: " 3vh",
+  },
+  logoFooter: {
+    width: "35%",
+  },
+  divLogoFooter: {
+    float: "left",
+  },
+  center: {
+    textAlign: "center",
+  },
+  footer: {
+    backgroundColor: "#15252E",
+    color: "#F0F0F0",
+  },
+  iframe: {
+    width: "400px",
+    height: "300px",
+  },
+  menuFooter: {
+    float: "right",
+  },
+  menuLink: {
+    color: "#F0F0F0",
+    textDecoration: "none",
+  },
 };
 
 export default styles;
