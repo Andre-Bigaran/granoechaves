@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.js";
 import Carousel from "../../components/Carousel/index.js";
 import quemSomos from "../../assets/quemSomos.png";
@@ -39,26 +39,7 @@ class index extends React.Component {
           <div style={styles.containerFlex}>
             <div style={styles.backgroundMobile}>
               <div style={styles.containerHome}>
-                <div style={styles.containerIcon}>
-                  <div style={styles.borderRHome}></div>
-                  <div style={styles.iconsL}>
-                    <a href="" style={styles.icons}>
-                      <FaPhone />
-                    </a>
-                    <a href="" style={styles.icons}>
-                      <FaWhatsapp />
-                    </a>
-                    <a href="" style={styles.icons}>
-                      <FaFacebook />
-                    </a>
-                    <a href="" style={styles.icon}>
-                      <FaInstagram />
-                    </a>
-                  </div>
-                  <div style={styles.borderLHome}></div>
-                </div>
-
-                <div style={styles.centeredDivE}>
+                <div id="home" style={styles.centeredDivE}>
                   <h1>Grano e Chaves advogados</h1>
                   <p style={styles.pTittle}>
                     Defendendo seus direitos, empoderando pacientes e lutando
@@ -69,7 +50,7 @@ class index extends React.Component {
                     onClick={scrollToContainerMobile}
                     style={styles.bTittle}
                   >
-                    Contatar
+                    CONTATAR
                   </button>
                 </div>
               </div>

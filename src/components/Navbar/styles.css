@@ -3,17 +3,24 @@ nav {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    padding: 3vh 5vw;
-    position: absolute;
+    padding: 1vh 4vw;
+    position: fixed;
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 9999;
   }
-  
+  .navbar.fixed {
+    background-color: #1b2329; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.274);
+  }
+
   .logo {
-    width: 15vh;
+    width: 13vh;
     display: flex;
     align-items: center;
+    padding: 1vh;
+    cursor: pointer;
   }
   
   #navbar {
@@ -29,7 +36,7 @@ nav {
   
   #navbar li a {
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #fff;
     transition: 0.3s ease-in-out;
@@ -37,7 +44,7 @@ nav {
   
   #navbar li a:hover,
   #navbar li a.active {
-    color: #17cf97;
+    color: #F0F0F0;
   }
   
   #navbar li a:hover::after,
@@ -45,7 +52,7 @@ nav {
     content: "";
     width: 30%;
     height: 2px;
-    background: #17cf97;
+    background: #F0F0F0;
     position: absolute;
     bottom: -4px;
     left: 20px;
@@ -67,11 +74,11 @@ nav {
       align-items: flex-start;
       justify-content: flex-start;
       position: fixed;
-      top: 90px;
+      top: 8vh;
       right: -300px;
       width: 300px;
       height: 100vh;
-      background: #2a3239;
+      background: #1b2329;
       box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
       padding: 40px 0 0 10px;
       transition: 0.3s ease-in-out;

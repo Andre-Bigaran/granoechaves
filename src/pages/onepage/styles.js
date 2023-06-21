@@ -39,7 +39,7 @@ const styles = {
     display: "inline-flex",
   },
   centeredDivE: {
-    margin: "35vh 0px 0px 10vw",
+    margin: "40vh 0px 0px 6vw",
   },
   centeredDiv: {
     textAlign: "center",
@@ -47,7 +47,8 @@ const styles = {
     padding: "20px 0 0 0 ",
   },
   pTittle: {
-    marginRight: "30%",
+    marginRight: "50vw",
+    paddingBottom: "2vw",
   },
   bTittle: {
     border: "2px solid #F0F0F0",
@@ -56,6 +57,12 @@ const styles = {
     padding: "10px 20px",
     color: "#F0F0F0",
     cursor: "pointer",
+    fontSize: "initial",
+    textTransform: "uppercase",
+  },
+  bTittleHover: {
+    backgroundColor: "#F0F0F0",
+    color: "#000000",
   },
   backgroundEquipe: {
     backgroundImage: `url(${backgorundAbout})`,
