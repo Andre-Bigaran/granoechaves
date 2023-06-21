@@ -95,10 +95,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <iframe
+        {/* <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.700971109006!2d-51.156693385026635!3d-23.32660588479992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb436b9517c833%3A0x96722f11d5f2c60d!2sAv.%20Duque%20de%20Caxias%2C%201726%20-%20109%20-%20Jardim%20Londrilar%2C%20Londrina%20-%20PR%2C%2086010-190!5e0!3m2!1spt-BR!2sbr!4v1686182330390!5m2!1spt-BR!2sbr"
           style={styles.iframe}
-        />
+        /> */}
 
         <div className="copywrite" style={styles.center}>
           <p>

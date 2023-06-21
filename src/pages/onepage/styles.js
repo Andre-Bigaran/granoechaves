@@ -1,10 +1,20 @@
 import backgroundMockup from "../../assets/mockupBackground.png";
+import backgroundMockupMobile from "../../assets/mockupBackgroundMobile.png";
 import backgroundContact from "../../assets/contact.png";
 
-/* styles.css */
+import backgorundAbout from "../../assets/backgroundAbout.svg";
+
 const styles = {
   background: {
     backgroundImage: `url(${backgroundMockup})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: "100vw",
+    height: "100vh",
+  },
+  backgroundMobile: {
+    backgroundImage: `url(${backgroundMockupMobile})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
@@ -23,20 +33,13 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     height: "50vh",
+    overflow: "hidden",
   },
-  containerCircle: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: "0 20px 0 20px",
-    height: "20vh",
-  },
-  divCircle: {
+  containerHome: {
     display: "inline-flex",
   },
   centeredDivE: {
-    margin: "20% 0 0 5% ",
+    margin: "35vh 0px 0px 10vw",
   },
   centeredDiv: {
     textAlign: "center",
@@ -52,58 +55,32 @@ const styles = {
     backgroundColor: "transparent",
     padding: "10px 20px",
     color: "#F0F0F0",
+    cursor: "pointer",
   },
-  circle: {
-    width: "100px",
-    height: "100px",
-    borderRadius: "50%",
-    backgroundColor: "#1F313C",
-  },
-  textCircle: {
-    marginTop: "20px",
-    textAlign: "center",
-  },
-  slideContainer: {
-    display: "flex",
-    scrollSnapType: "x mandatory",
-    scrollBehavior: "smooth",
-    width: "100%",
-    scrollPadding: "0 10px",
-    alignItems: "center",
-    justifyContent: "center",
-    scrollbarWidth: "thin",
-    marginBottom: "5%",
-  },
-
-  itemBox: {
-    flex: "0 0 25%",
-    width: "40%",
-    margin: "0 auto",
-  },
-
-  carousel: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
   backgroundEquipe: {
-    backgroundColor: "#AEB8BE",
+    backgroundImage: `url(${backgorundAbout})`,
     margin: 0,
     padding: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: "100vw",
+    height: "100vh",
   },
-
-  TextEquipe: {
-    textAlign: "left",
-    padding: "5% 2% 5% 2%",
+  textEquipe: {
+    textAlign: "start",
+    padding: "2%",
+    whiteSpace: "pre-line",
   },
   imgEquipe: {
     float: "left",
-
-    paddingRight: "6%",
+    paddingRight: "4%",
   },
   imgEquipeW: {
-    width: "100%",
+    width: "60vh",
   },
   contactBackground: {
     backgroundImage: `url(${backgroundContact})`,
@@ -112,6 +89,45 @@ const styles = {
     backgroundPosition: "center",
     height: "80vh",
     marginTop: "4%",
+  },
+  borderRHome: {
+    borderLeft: "2px solid white",
+    height: "20vh",
+    marginTop: "20vh",
+    marginLeft: "5vw",
+  },
+  borderLHome: {
+    borderLeft: "2px solid white",
+    height: "20vh",
+    marginTop: "5vh",
+    marginLeft: "5vw",
+  },
+  iconsL: {
+    display: "grid",
+    marginTop: "5vh",
+    marginLeft: "4.5vw",
+  },
+  icons: {
+    marginBottom: "50%",
+    cursor: "pointer",
+    textDecoration: "none",
+    color: "white",
+  },
+  icon: {
+    cursor: "pointer",
+    textDecoration: "none",
+    color: "white",
+  },
+  divAtuacaoText: {
+    marginLeft: "30%",
+    marginRight: "30%",
+  },
+
+  containerIcon: {},
+  "@media (max-width: 768px)": {
+    containerIcon: {
+      display: "none",
+    },
   },
 };
 

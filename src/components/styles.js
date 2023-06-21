@@ -17,16 +17,33 @@ const styles = {
     width: "100px",
     height: "auto",
   },
+  containerText: {
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  menuItems: {
+    display: "flex",
+    gap: "20px",
+  },
+  itemText: {
+    color: "#F0F0F0",
+    textDecoration: "none",
+    paddingLeft: "10%",
+  },
+
   searchForm: {
     display: "flex",
     alignItems: "center",
   },
   searchInput: {
     marginLeft: "10px",
-    padding: "5px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
     background: "#F0F0F0",
+    padding: "10px 40px 10px 10px",
+    border: "none",
+    borderRadius: "5px",
+    fontSize: "16px",
+    width: "300px",
   },
   searchButton: {
     marginLeft: "10px",
@@ -36,6 +53,11 @@ const styles = {
     color: "black",
     border: "none",
     cursor: "pointer",
+    position: "absolute",
+    top: "50%",
+    right: "10px",
+    transform: "translateY(-50%)",
+    outline: "none",
   },
   inputContact: {
     width: "30vw",
@@ -64,6 +86,9 @@ const styles = {
   menuLink: {
     color: "#F0F0F0",
     textDecoration: "none",
+  },
+  searchContainer: {
+    position: "relative",
   },
 };
 
