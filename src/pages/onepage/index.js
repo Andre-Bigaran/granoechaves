@@ -4,6 +4,7 @@ import Carousel from "../../components/Carousel/index.js";
 import quemSomos from "../../assets/quemSomos.png";
 import ContactForm from "../../components/contato.js";
 import { FaPhone, FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
+import { BsArrowRight } from "react-icons/bs";
 
 class index extends React.Component {
   constructor() {
@@ -39,27 +40,36 @@ class index extends React.Component {
           <div style={styles.containerFlex}>
             <div style={styles.backgroundMobile}>
               <div style={styles.containerHome}>
-                <div id="home" style={styles.centeredDivE}>
-                  <h1>Grano e Chaves advogados</h1>
-                  <p style={styles.pTittle}>
-                    Defendendo seus direitos, empoderando pacientes e lutando
-                    incansavelmente por justiça na área da saúde. Conte conosco
-                    para enfrentar desafios, superar obstáculos.
-                  </p>
-                  <button
-                    onClick={scrollToContainerMobile}
-                    style={styles.bTittle}
+                <div id="home" style={styles.centeredDivMobile}>
+                  <div style={styles.containerHomeMobile}>
+                    <h1 style={styles.tittleMobile}>
+                      SUS deve fornecer medicamento de alto custo para quem
+                      sofre de Fibromialgia
+                    </h1>
+                    <p style={styles.pTittleMobile}>
+                      Medicamento Cloridrato de Duloxetina é mais conhecido
+                      pelos nomes comerciais de Velija, Cymbi ou Cymbalta.
+                    </p>
+                  </div>
+
+                  <a
+                    href="https://www.jusbrasil.com.br/noticias/sus-deve-fornecer-medicamento-de-alto-custo-para-quem-sofre-de-fibromialgia/1185662517"
+                    target="_blank"
+                    style={styles.aButtonHomeMobile}
                   >
-                    CONTATAR
-                  </button>
+                    <div style={styles.bTittleMobile}></div>
+                    <BsArrowRight />
+                    <span style={styles.bTextMobile}>Saiba mais</span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           <div tyle={styles.container}>
             <div style={styles.centeredDiv}>
-              <h2>ARÉAS DE ATUAÇÃO</h2>
-              <p style={styles.divAtuacaoText}>
+              <h2 style={styles.tittleArea}>ÁREAS DE ATUAÇÃO</h2>
+              <div style={styles.tittleAreaDecoration}></div>
+              <p style={styles.divAtuacaoTextMobile}>
                 Nossos advogados são especialistas em diversas áreas do direito,
                 com um enfoque específico em Direito Médico e Direito da Saúde.
                 Conheça nossas áreas de atuação nessas duas áreas fundamentais

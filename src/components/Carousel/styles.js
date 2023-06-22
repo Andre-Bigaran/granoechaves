@@ -25,18 +25,21 @@ const styles = {
     width: "200px",
     height: "200px",
     borderRadius: "50%",
-    backgroundColor: "#eaeaea",
+    backgroundColor: "#1F313C",
     padding: "10px",
+    margin: "auto",
   },
   circle: {
-    width: "80px",
-    height: "80px",
-    borderRadius: "50%",
-    backgroundColor: "#fff",
-    marginBottom: "10px",
+    marginTop: "10%",
+    fontSize: "5rem",
+    color: "#F0F0F0",
   },
   textCircle: {
     textAlign: "center",
+    marginTop: "3vh",
+    marginLeft: "15vw",
+    marginRight: "15vw",
+    marginBottom: "1vh",
   },
 };
 

@@ -13,14 +13,7 @@ const styles = {
     width: "100vw",
     height: "100vh",
   },
-  backgroundMobile: {
-    backgroundImage: `url(${backgroundMockupMobile})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    width: "100vw",
-    height: "100vh",
-  },
+
   containerFlex: {
     display: "flex",
     justifyContent: "flex-start",
@@ -128,6 +121,75 @@ const styles = {
   divAtuacaoText: {
     marginLeft: "30%",
     marginRight: "30%",
+  },
+
+  //mobile
+
+  backgroundMobile: {
+    backgroundImage: `url(${backgroundMockupMobile})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: "100vw",
+    height: "65vh",
+  },
+  containerHomeMobile: {
+    backgroundColor: "rgba(59, 59, 59, 0.6)",
+    padding: "2vh",
+    marginBottom: "6vh",
+  },
+  centeredDivMobile: {
+    margin: "20vh 6vw  0 0 ",
+  },
+  pTittleMobile: {
+    marginRight: "5vw",
+    paddingBottom: "2vw",
+    fontSize: "small",
+  },
+  tittleMobile: {
+    fontSize: "smaller",
+    marginBottom: "1.5vh",
+  },
+  bTittleMobile: {
+    marginLeft: "2vh",
+    marginRight: "-1vh",
+    border: "2px solid #F0F0F0",
+    borderRadius: "3px",
+    backgroundColor: "transparent",
+    padding: "20px 20px",
+    color: "#F0F0F0",
+    cursor: "pointer",
+  },
+  setaTittleMobile: {
+    margin: "0",
+    padding: "0",
+    borderTop: "10px solid transparent",
+    borderBottom: "10px solid transparent",
+    borderLeft: "10px solid transparent",
+  },
+  bTextMobile: {
+    fontSize: "medium",
+    marginLeft: "2vh",
+  },
+  aButtonHomeMobile: {
+    textDecoration: "none",
+    color: "#f0f0f0",
+    alignItems: "center",
+    display: "flex",
+  },
+
+  divAtuacaoTextMobile: {
+    margin: "0 1vh 3vh 1vh",
+  },
+  tittleArea: {
+    marginTop: "2vh",
+    marginBottom: "0.5vh",
+  },
+  tittleAreaDecoration: {
+    borderBottom: "4px solid #1F313C",
+    marginLeft: "12vw",
+    marginRight: "12vw",
+    marginBottom: "3vh",
   },
 
   containerIcon: {},
