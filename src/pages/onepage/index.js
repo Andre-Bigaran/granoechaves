@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, createRef } from "react";
 import styles from "./styles.js";
-import Carousel from "../../components/Carousel/index.js";
-import quemSomos from "../../assets/quemSomos.png";
+import quemSomosImg from "../../assets/imagemQuemSomos.png";
+import imgAtendimento from "../../assets/imgAtendimento.png";
+import imagemMedico from "../../assets/imagemMedico.png";
+import Atuacao from "../../components/Atuacao/index.js";
 import ContactForm from "../../components/contato.js";
 import { FaPhone, FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
-import { BsArrowRight } from "react-icons/bs";
+import imgCompromisso from "../../assets/imgCompromisso.png";
 
 class index extends React.Component {
+  sectionRef = createRef();
+
+  handleClick = (event) => {
+    event.preventDefault(); // Evita o comportamento padrão do formulário
+    if (this.sectionRef.current) {
+      window.scrollTo({
+        top: this.sectionRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   constructor() {
     super();
     this.state = {
@@ -29,10 +43,6 @@ class index extends React.Component {
   render() {
     const { width } = this.state;
     const isMobile = width <= 768;
-    const scrollToContainerMobile = () => {
-      const container = document.getElementById("faleconosco");
-      container.scrollIntoView({ behavior: "smooth" });
-    };
 
     if (isMobile) {
       return (
@@ -43,32 +53,30 @@ class index extends React.Component {
                 <div id="home" style={styles.centeredDivMobile}>
                   <div style={styles.containerHomeMobile}>
                     <h1 style={styles.tittleMobile}>
-                      SUS deve fornecer medicamento de alto custo para quem
-                      sofre de Fibromialgia
+                      Grano e Chaves advogados
                     </h1>
                     <p style={styles.pTittleMobile}>
-                      Medicamento Cloridrato de Duloxetina é mais conhecido
-                      pelos nomes comerciais de Velija, Cymbi ou Cymbalta.
+                      Defendendo seus direitos, empoderando pacientes e lutando
+                      incansavelmente por justiça na área da saúde. Conte
+                      conosco para enfrentar desafios, superar obstáculos.
                     </p>
+                    <div style={styles.divBTittleMobile}>
+                      <a
+                        href=""
+                        onClick={this.handleClick}
+                        style={styles.bTittleMobile}
+                      >
+                        SAIBA MAIS
+                      </a>
+                    </div>
                   </div>
-
-                  <a
-                    href="https://www.jusbrasil.com.br/noticias/sus-deve-fornecer-medicamento-de-alto-custo-para-quem-sofre-de-fibromialgia/1185662517"
-                    target="_blank"
-                    style={styles.aButtonHomeMobile}
-                  >
-                    <div style={styles.bTittleMobile}></div>
-                    <BsArrowRight />
-                    <span style={styles.bTextMobile}>Saiba mais</span>
-                  </a>
                 </div>
               </div>
             </div>
           </div>
           <div tyle={styles.container}>
             <div style={styles.centeredDiv}>
-              <h2 style={styles.tittleArea}>ÁREAS DE ATUAÇÃO</h2>
-              <div style={styles.tittleAreaDecoration}></div>
+              <h2 style={styles.tittleAreaMobile}>ÁREAS DE ATUAÇÃO</h2>
               <p style={styles.divAtuacaoTextMobile}>
                 Nossos advogados são especialistas em diversas áreas do direito,
                 com um enfoque específico em Direito Médico e Direito da Saúde.
@@ -76,122 +84,128 @@ class index extends React.Component {
               </p>
 
               <div>
-                <Carousel />
+                <Atuacao />
               </div>
 
               <div>
-                <div style={styles.backgroundEquipe}>
-                  {/* <div style={styles.imgEquipe}>
-                <img src={quemSomos} style={styles.imgEquipeW} alt="" />
-              </div> */}
+                <div style={styles.backgroundEquipeMobile}>
+                  <div style={styles.textEquipeMobile}>
+                    <h2 style={styles.h2EquipeMobile}>Quem somos</h2>
 
-                  {/* <div style={styles.textEquipe}>
-                <h2>CONHEÇA O ESCRITÓRIO</h2>
-                <div>
-                  <h3>
-                    {" "}
-                    Advogados Especializados em Direito da Saúde e Direito
-                    Médico
-                  </h3>
-                  <p>
-                    Somos uma equipe de advogados especializados em Direito da
-                    Saúde e Direito Médico, comprometidos em defender os
-                    direitos dos pacientes. Com sede em Londrina, Paraná,
-                    oferecemos serviços de representação jurídica em todo o
-                    Brasil, com ênfase em ações contra planos de saúde, o SUS e
-                    questões relacionadas à negligência médica.
-                  </p>
+                    <div>
+                      <img
+                        src={quemSomosImg}
+                        alt=""
+                        style={styles.imgEquipeWMobile}
+                      />
+                    </div>
+
+                    <div>
+                      <h3 style={styles.tittleEquipeMobile}>Sobre nós</h3>
+
+                      <p style={styles.pEquipeMobile}>
+                        Somos uma equipe de advogados especializados em Direito
+                        da Saúde e Direito Médico, comprometidos em defender os
+                        direitos dos pacientes. Com sede em Londrina, Paraná,
+                        oferecemos serviços de representação jurídica em todo o
+                        Brasil, com ênfase em ações contra planos de saúde, o
+                        SUS e questões relacionadas à negligência médica.
+                      </p>
+                    </div>
+                    <div>
+                      <img
+                        src={imagemMedico}
+                        alt=""
+                        style={styles.imgEquipeWMobile}
+                      />
+                    </div>
+                    <div>
+                      <h3 style={styles.tittleEquipeMobile}>
+                        Direito Médico: Proteção contra Negligência e Erro
+                        Médico
+                      </h3>
+                      <p style={styles.pEquipeMobile}>
+                        Em nossa atuação em Direito Médico, estamos preparados
+                        para representar clientes em casos de negligência
+                        médica, erro médico e responsabilidade civil de
+                        hospitais e profissionais de saúde. Buscamos justiça em
+                        situações de má prática médica, defendendo os direitos
+                        dos pacientes e buscando a devida compensação pelos
+                        danos sofridos.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
 
-                <div>
-                  <h3>
-                    {" "}
-                    Ações contra Planos de Saúde: Garantindo sua Cobertura e
-                    Direitos
+              <div>
+                <div style={styles.containerTextCompromissoMobile}>
+                  <h3 style={styles.h3TextCompromissoMobile}>
+                    Compromisso com a Ética e Transparência
                   </h3>
-                  <p>
-                    Como especialistas em Direito da Saúde, ajudamos pacientes a
-                    enfrentar questões complexas envolvendo planos de saúde.
-                    Lidamos com negativas de cobertura de tratamentos e
-                    procedimentos, atrasos no atendimento, reajustes abusivos de
-                    mensalidades e cancelamentos indevidos durante o tratamento.
-                    Nossa equipe está preparada para lutar pelos seus direitos e
-                    garantir que você receba a assistência médica necessária.
-                  </p>
-                </div>
-
-                <div>
-                  <h3>
-                    {" "}
-                    Defesa dos seus Direitos no SUS: Buscando uma Saúde Pública
-                    de Qualidade
-                  </h3>
-                  <p>
-                    Representamos pacientes em ações contra o SUS, buscando
-                    garantir o acesso adequado aos serviços de saúde. Lutamos
-                    contra a falta de atendimento, demoras no agendamento de
-                    consultas e cirurgias, negativas de fornecimento de
-                    medicamentos e outras questões. Nosso objetivo é assegurar
-                    que você receba o tratamento adequado e a qualidade de
-                    cuidados que merece.
-                  </p>
-                </div>
-
-                <div>
-                  <h3>
-                    {" "}
-                    Direito Médico: Proteção contra Negligência e Erro Médico
-                  </h3>
-                  <p>
-                    Em nossa atuação em Direito Médico, estamos preparados para
-                    representar clientes em casos de negligência médica, erro
-                    médico e responsabilidade civil de hospitais e profissionais
-                    de saúde. Buscamos justiça em situações de má prática
-                    médica, defendendo os direitos dos pacientes e buscando a
-                    devida compensação pelos danos sofridos.
-                  </p>
-                </div>
-
-                <div>
-                  <h3>
-                    {" "}
-                    Atendimento Personalizado: Online e Presencial em Londrina
-                  </h3>
-                  <p>
-                    Valorizamos a comodidade e a acessibilidade nos serviços
-                    jurídicos. Oferecemos atendimento personalizado 100% online,
-                    permitindo a assinatura de documentos e reuniões virtuais.
-                    Além disso, você também pode contar com nosso atendimento
-                    presencial em nossa moderna sede em Londrina-PR. Nossas
-                    instalações são projetadas para proporcionar conforto e
-                    acessibilidade aos nossos clientes.
-                  </p>
-                </div>
-
-                <div>
-                  <h3> Compromisso com a Ética e Transparência</h3>
-                  <p>
+                  <img
+                    src={imgCompromisso}
+                    alt=""
+                    style={styles.imgCompromisso}
+                  />
+                  <p style={styles.pTextCompromissoMobile}>
                     Nosso trabalho é pautado pela ética e transparência.
                     Comprometemo-nos a fornecer a representação jurídica que
                     você merece, com integridade e dedicação. Ao entrar em
                     contato conosco, você terá a tranquilidade de estar lidando
                     com uma equipe confiável e comprometida com seus interesses.
-                  </p>
-
-                  <p>
                     Agende uma consulta hoje mesmo para garantir a defesa de
                     seus direitos relacionados ao Direito da Saúde e Direito
-                    Médico. Nossa equipe de advogados especializados está pronta
-                    para ajudá-lo.
+                    Médico. Nossa equipe de advogados especializados está
+                    pronta para ajudá-lo.
                   </p>
-                </div>
-              </div> */}
                 </div>
               </div>
 
-              <div id="faleconosco" style={styles.contactBackground}>
-                <h2>FALE CONOSCO</h2>
-                <ContactForm />
+              <div style={styles.backgroundAmarelo}>
+                <div style={styles.containerAtendimentoMobile}>
+                  <div
+                    id="sectionRef"
+                    ref={this.sectionRef}
+                    style={styles.containerTextAtendimentoMobile}
+                  >
+                    <h3 style={styles.h3TextAtendimentoMobile}>
+                      Atendimento Personalizado: Online e Presencial em Londrina
+                    </h3>
+                    <img
+                      src={imgAtendimento}
+                      alt="imgAtendimento"
+                      style={styles.imgAtendimentoMobile}
+                    />
+                    <p style={styles.pTextAtendimentoMobile}>
+                      Valorizamos a comodidade e a acessibilidade nos serviços
+                      jurídicos. Oferecemos atendimento personalizado 100%
+                      online, permitindo a assinatura de documentos e reuniões
+                      virtuais. Além disso, você também pode contar com nosso
+                      atendimento presencial em nossa moderna sede em
+                      Londrina-PR. Nossas instalações são projetadas para
+                      proporcionar conforto e acessibilidade aos nossos
+                      clientes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="faleconosco" style={styles.contactBackgroundMobile}>
+                <div style={styles.containerContactMobile}>
+                  <div style={styles.textContactMobile}>
+                    <h2 style={styles.h2TextContact}>
+                      Seus direitos merecem ser protegidos. Fale Conosco
+                    </h2>
+                    <p>
+                      Deixe-nos cuidar do seu caso e garantir que a justiça seja
+                      feita
+                    </p>
+                  </div>
+                  <div style={styles.contentContactMobile}>
+                    <ContactForm />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -199,10 +213,6 @@ class index extends React.Component {
       );
     }
 
-    const scrollToContainer = () => {
-      const container = document.getElementById("faleconosco");
-      container.scrollIntoView({ behavior: "smooth" });
-    };
     return (
       <div>
         <div style={styles.containerFlex}>
@@ -228,22 +238,23 @@ class index extends React.Component {
               </div>
 
               <div style={styles.centeredDivE}>
-                <h1>Grano e Chaves advogados</h1>
+                <h1 style={styles.H1Tittle}>Grano e Chaves advogados</h1>
                 <p style={styles.pTittle}>
                   Defendendo seus direitos, empoderando pacientes e lutando
                   incansavelmente por justiça na área da saúde. Conte conosco
                   para enfrentar desafios, superar obstáculos.
                 </p>
-                <button onClick={scrollToContainer} style={styles.bTittle}>
-                  Contatar
-                </button>
+
+                <a href="" onClick={this.handleClick} style={styles.bTittle}>
+                  SAIBA MAIS
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div tyle={styles.container}>
           <div style={styles.centeredDiv}>
-            <h2>ARÉAS DE ATUAÇÃO</h2>
+            <h2 style={styles.h2TittleArea}>ÁREAS DE ATUAÇÃO</h2>
             <p style={styles.divAtuacaoText}>
               Nossos advogados são especialistas em diversas áreas do direito,
               com um enfoque específico em Direito Médico e Direito da Saúde.
@@ -251,88 +262,89 @@ class index extends React.Component {
             </p>
 
             <div>
-              <Carousel />
+              <Atuacao />
             </div>
 
-            <div>
-              <div style={styles.backgroundEquipe}>
-                {/* <div style={styles.imgEquipe}>
-                <img src={quemSomos} style={styles.imgEquipeW} alt="" />
-              </div> */}
+            <div style={styles.containerBackgroundAbout}>
+              <fieldset style={styles.fieldset}>
+                <div style={styles.containerAbout}>
+                  <legend style={styles.legend}>
+                    <h2 style={styles.h2Legend}>Quem somos</h2>
+                  </legend>
 
-                {/* <div style={styles.textEquipe}>
-                <h2>CONHEÇA O ESCRITÓRIO</h2>
-                <div>
-                  <h3>
-                    {" "}
-                    Advogados Especializados em Direito da Saúde e Direito
-                    Médico
-                  </h3>
-                  <p>
-                    Somos uma equipe de advogados especializados em Direito da
-                    Saúde e Direito Médico, comprometidos em defender os
-                    direitos dos pacientes. Com sede em Londrina, Paraná,
-                    oferecemos serviços de representação jurídica em todo o
-                    Brasil, com ênfase em ações contra planos de saúde, o SUS e
-                    questões relacionadas à negligência médica.
-                  </p>
-                </div>
+                  <h3 style={styles.h3TittleSobre1}>Sobre nós</h3>
 
-                <div>
-                  <h3>
-                    {" "}
-                    Ações contra Planos de Saúde: Garantindo sua Cobertura e
-                    Direitos
-                  </h3>
-                  <p>
-                    Como especialistas em Direito da Saúde, ajudamos pacientes a
-                    enfrentar questões complexas envolvendo planos de saúde.
-                    Lidamos com negativas de cobertura de tratamentos e
-                    procedimentos, atrasos no atendimento, reajustes abusivos de
-                    mensalidades e cancelamentos indevidos durante o tratamento.
-                    Nossa equipe está preparada para lutar pelos seus direitos e
-                    garantir que você receba a assistência médica necessária.
-                  </p>
-                </div>
+                  <div style={styles.displayContainerEquipe1}>
+                    <p style={styles.pTextEquipe1}>
+                      Somos uma equipe de advogados especializados em Direito da
+                      Saúde e Direito Médico, comprometidos em defender os
+                      direitos dos pacientes. Com sede em Londrina, Paraná,
+                      oferecemos serviços de representação jurídica em todo o
+                      Brasil, com ênfase em ações contra planos de saúde, o SUS
+                      e questões relacionadas à negligência médica.
+                    </p>
+                    <div>
+                      <img
+                        src={quemSomosImg}
+                        alt=""
+                        style={styles.imgEquipe1}
+                      />
+                    </div>
+                  </div>
 
-                <div>
-                  <h3>
-                    {" "}
-                    Defesa dos seus Direitos no SUS: Buscando uma Saúde Pública
-                    de Qualidade
-                  </h3>
-                  <p>
-                    Representamos pacientes em ações contra o SUS, buscando
-                    garantir o acesso adequado aos serviços de saúde. Lutamos
-                    contra a falta de atendimento, demoras no agendamento de
-                    consultas e cirurgias, negativas de fornecimento de
-                    medicamentos e outras questões. Nosso objetivo é assegurar
-                    que você receba o tratamento adequado e a qualidade de
-                    cuidados que merece.
-                  </p>
-                </div>
+                  <div>
+                    <img src={imagemMedico} alt="" style={styles.imgEquipe2} />
+                  </div>
 
-                <div>
-                  <h3>
-                    {" "}
+                  <h3 style={styles.h3TittleSobre2}>
                     Direito Médico: Proteção contra Negligência e Erro Médico
                   </h3>
-                  <p>
-                    Em nossa atuação em Direito Médico, estamos preparados para
-                    representar clientes em casos de negligência médica, erro
-                    médico e responsabilidade civil de hospitais e profissionais
-                    de saúde. Buscamos justiça em situações de má prática
-                    médica, defendendo os direitos dos pacientes e buscando a
-                    devida compensação pelos danos sofridos.
-                  </p>
-                </div>
 
-                <div>
-                  <h3>
-                    {" "}
+                  <div style={styles.displayContainerEquipe1}>
+                    <p style={styles.pTextEquipe2}>
+                      Somos uma equipe de advogados especializados em Direito da
+                      Saúde e Direito Médico, comprometidos em defender os
+                      direitos dos pacientes. Com sede em Londrina, Paraná,
+                      oferecemos serviços de representação jurídica em todo o
+                      Brasil, com ênfase em ações contra planos de saúde, o SUS
+                      e questões relacionadas à negligência médica.
+                    </p>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div style={styles.backgroundCompromisso}>
+              <div style={styles.containerTextCompromisso}>
+                <h3 style={styles.h3TextCompromisso}>
+                  Compromisso com a Ética e Transparência
+                </h3>
+                <p style={styles.pTextCompromisso}>
+                  Nosso trabalho é pautado pela ética e transparência.
+                  Comprometemo-nos a fornecer a representação jurídica que você
+                  merece, com integridade e dedicação. Ao entrar em contato
+                  conosco, você terá a tranquilidade de estar lidando com uma
+                  equipe confiável e comprometida com seus interesses. Agende
+                  uma consulta hoje mesmo para garantir a defesa de seus
+                  direitos relacionados ao Direito da Saúde e Direito Médico.
+                  Nossa equipe de advogados especializados está
+                  pronta para ajudá-lo.
+                </p>
+              </div>
+            </div>
+
+            <div style={styles.backgroundAmarelo}>
+              <div
+                ref={this.sectionRef}
+                id="sectionRef"
+                style={styles.containerAtendimento}
+              >
+                <img src={imgAtendimento} alt="imgAtendimento" />
+                <div style={styles.containerTextAtendimento}>
+                  <h3 style={styles.h3TextAtendimento}>
                     Atendimento Personalizado: Online e Presencial em Londrina
                   </h3>
-                  <p>
+                  <p style={styles.pTextAtendimento}>
                     Valorizamos a comodidade e a acessibilidade nos serviços
                     jurídicos. Oferecemos atendimento personalizado 100% online,
                     permitindo a assinatura de documentos e reuniões virtuais.
@@ -342,31 +354,24 @@ class index extends React.Component {
                     acessibilidade aos nossos clientes.
                   </p>
                 </div>
-
-                <div>
-                  <h3> Compromisso com a Ética e Transparência</h3>
-                  <p>
-                    Nosso trabalho é pautado pela ética e transparência.
-                    Comprometemo-nos a fornecer a representação jurídica que
-                    você merece, com integridade e dedicação. Ao entrar em
-                    contato conosco, você terá a tranquilidade de estar lidando
-                    com uma equipe confiável e comprometida com seus interesses.
-                  </p>
-
-                  <p>
-                    Agende uma consulta hoje mesmo para garantir a defesa de
-                    seus direitos relacionados ao Direito da Saúde e Direito
-                    Médico. Nossa equipe de advogados especializados está pronta
-                    para ajudá-lo.
-                  </p>
-                </div>
-              </div> */}
               </div>
             </div>
 
             <div id="faleconosco" style={styles.contactBackground}>
-              <h2>FALE CONOSCO</h2>
-              <ContactForm />
+              <div style={styles.containerContact}>
+                <div style={styles.textContact}>
+                  <h2 style={styles.h2TextContact}>
+                    Seus direitos merecem ser protegidos. Fale Conosco
+                  </h2>
+                  <p>
+                    Deixe-nos cuidar do seu caso e garantir que a justiça seja
+                    feita
+                  </p>
+                </div>
+                <div style={styles.contentContact}>
+                  <ContactForm />
+                </div>
+              </div>
             </div>
           </div>
         </div>

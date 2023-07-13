@@ -23,56 +23,64 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name"></label>
-        <input
-          style={styles.inputContact}
-          type="text"
-          id="name"
-          placeholder="Nome"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-      </div>
+      <div style={styles.containerContact}>
+        <div>
+          <label htmlFor="name" style={styles.labelText}>
+            Nome
+          </label>
+          <input
+            style={styles.inputContact}
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
 
-      <div>
-        <label htmlFor="sobrenome"></label>
-        <input
-          style={styles.inputContact}
-          type="text"
-          id="sobrenome"
-          placeholder="Sobrenome"
-          value={sobrenome}
-          onChange={(e) => setSobrenome(e.target.value)}
-          required
-        />
-      </div>
+        <div>
+          <label htmlFor="sobrenome" style={styles.labelText}>
+            Sobrenome
+          </label>
+          <input
+            style={styles.inputContact}
+            type="text"
+            id="sobrenome"
+            value={sobrenome}
+            onChange={(e) => setSobrenome(e.target.value)}
+            required
+          />
+        </div>
 
-      <div>
-        <label htmlFor="email"></label>
-        <input
-          style={styles.inputContact}
-          type="email"
-          id="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <div>
+          <label htmlFor="email" style={styles.labelText}>
+            Email
+          </label>
+          <input
+            style={styles.inputContact}
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="message" style={styles.labelText}>
+            Conte-nos sobre seu caso
+          </label>
+          <textarea
+            style={styles.inputContactLabel}
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          ></textarea>
+        </div>
       </div>
-      <div>
-        <label htmlFor="message"></label>
-        <textarea
-          style={styles.inputContact}
-          id="message"
-          placeholder="Digite sua mensagem..."
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-        ></textarea>
-      </div>
-      <button type="submit">Enviar</button>
+      <button type="submit" style={styles.buttonContact}>
+        ENTRE EM CONTATO
+      </button>
     </form>
   );
 };

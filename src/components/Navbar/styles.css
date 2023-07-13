@@ -3,7 +3,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    padding: 1vh 4vw;
+    padding: 1vh 6vw;
     position: fixed;
     left: 0;
     right: 0;
@@ -11,7 +11,7 @@ nav {
     z-index: 9999;
   }
   .navbar.fixed {
-    background-color: #1b2329; 
+    background-color: #001C34; 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.274);
   }
 
@@ -22,6 +22,18 @@ nav {
     padding: 1vh;
     cursor: pointer;
   }
+
+  .btnEntreContato {
+    background-color: rgb(207,148,38);
+    padding: 13px 30px 13px 30px;
+    text-decoration: none;
+    color: #F0F0F0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  
   
   #navbar {
     display: flex;
@@ -30,15 +42,14 @@ nav {
   
   #navbar li {
     list-style: none;
-    padding: 0 20px;
+    padding: 0 2vw;
     position: relative;
   }
   
   #navbar li a {
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
+    color: #F0F0F0;
     transition: 0.3s ease-in-out;
   }
   
@@ -50,12 +61,12 @@ nav {
   #navbar li a:hover::after,
   #navbar li a.active::after {
     content: "";
-    width: 30%;
+    width: 25%;
     height: 2px;
     background: #F0F0F0;
     position: absolute;
     bottom: -4px;
-    left: 20px;
+    left: 2vw;
   }
   
   #mobile {
@@ -78,7 +89,7 @@ nav {
       right: -300px;
       width: 300px;
       height: 100vh;
-      background: #1b2329;
+      background: #001C34;
       box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
       padding: 40px 0 0 10px;
       transition: 0.3s ease-in-out;
@@ -99,6 +110,10 @@ nav {
     #mobile i {
       font-size: 24px;
       cursor: pointer;
+    }
+
+    #btnContato {
+      display: none;
     }
   }
   

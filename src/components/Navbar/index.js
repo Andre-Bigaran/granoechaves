@@ -52,11 +52,12 @@ const Navbar = () => {
             <li>
               <a href="">BLOG</a>
             </li>
-            <li>
-              <a href="">CONTATO</a>
-            </li>
           </ul>
         </div>
+
+        <a id="btnContato" href="" className="btnEntreContato">
+          ENTRE EM CONTATO
+        </a>
 
         <div id="mobile" onClick={handleClick}>
           <i id="bar" className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
